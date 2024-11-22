@@ -1,12 +1,10 @@
-@use "sass:list";
-
 @use "../utilities/derived-variables" as dv;
 @use "../utilities/initial-variables" as iv;
 @use "../utilities/mixins" as mx;
 
 @mixin typography-size($target: "") {
   @each $size in dv.$sizes {
-    $i: list.index(dv.$sizes, $size);
+    $i: index(dv.$sizes, $size);
 
     .#{iv.$helpers-prefix}size-#{$i}#{if($target == "", "", "-" + $target)} {
       font-size: $size !important;
